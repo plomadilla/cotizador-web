@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+jinja2
+reportlab
+requests
+boto3
