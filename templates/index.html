@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizador de Vehículos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <h2 class="mb-4 text-center">Cotizador Comercial de Usados</h2>
+        
+        <form id="cotizadorForm" class="row g-3 bg-white p-4 rounded shadow-sm">
+            <h4 class="text-primary">Datos del Cliente</h4>
+            <div class="col-md-6">
+                <label class="form-label">Nombre del Cliente</label>
+                <input type="text" id="clienteNombre" class="form-control" required value="Carlos Gómez">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Teléfono WhatsApp</label>
+                <input type="text" id="clienteTelefono" class="form-control" required value="+5491155551234">
+            </div>
+
+            <h4 class="text-primary mt-4">Datos del Vehículo</h4>
+            <div class="col-md-4">
+                <label class="form-label">Marca</label>
+                <input type="text" id="vehiculoMarca" class="form-control" required value="Volkswagen">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Modelo</label>
+                <input type="text" id="vehiculoModelo" class="form-control" required value="Gol Trend">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Versión</label>
+                <input type="text" id="vehiculoVersion" class="form-control" required value="1.6 MSI Comfortline">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Año</label>
+                <input type="number" id="vehiculoAnio" class="form-control" required value="2018">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Kilometraje</label>
+                <input type="number" id="vehiculoKm" class="form-control" required value="75000">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Patente</label>
+                <input type="text" id="vehiculoPatente" class="form-control" value="AC123JK">
+            </div>
+
+            <h4 class="text-primary mt-4">Valores Financieros y Peritaje</h4>
+            <div class="col-md-6">
+                <label class="form-label">Precio Referencia Mercado ($)</label>
+                <input type="number" step="0.01" id="precioReferencia" class="form-control" required value="12500000">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Margen Agencia (%)</label>
+                <input type="number" step="0.1" id="margenAgencia" class="form-control" value="12">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Ajuste KM (%)</label>
+                <input type="number" step="0.1" id="ajusteKm" class="form-control" value="-2">
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Reparación Mecánica ($)</label>
+                <input type="number" id="repMecanica" class="form-control" value="0">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Reparación Carrocería ($)</label>
+                <input type="number" id="repCarroceria" class="form-control" value="250000">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Reemplazo Cubiertas ($)</label>
+                <input type="number" id="repCubiertas" class="form-control" value="380000">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Deuda Patentes ($)</label>
+                <input type="number" id="deudaPatentes" class="form-control" value="45000">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Deuda Multas ($)</label>
+                <input type="number" id="deudaMultas" class="form-control" value="120000">
+            </div>
+
+            <div class="col-12 mt-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="enviarWhatsapp" checked>
+                    <label class="form-check-label" for="enviarWhatsapp">Enviar PDF por WhatsApp automáticamente</label>
+                </div>
+            </div>
+
+            <div class="col-12 mt-4">
+                <button type="submit" class="btn btn-primary w-100 btn-lg">Generar y Cotizar</button>
+            </div>
+        </form>
+
+        <div id="resultadoBox" class="mt-4 p-4 bg-white rounded shadow-sm d-none">
+            <h3 class="text-success text-center">Oferta Final de Toma</h3>
+            <h1 class="text-center fw-bold" id="montoFinal">$ 0.00</h1>
+            <p id="mensajeEstado" class="text-muted text-center"></p>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
